@@ -22,7 +22,7 @@ export default function Contact() {
                                 </div>
                                 <div className="ml-4">
                                     <h4 className="font-semibold">{t('info.email')}</h4>
-                                    <p className="text-muted-foreground">contato@otima.com.br</p>
+                                    <p className="text-muted-foreground">contato@otima.software</p>
                                 </div>
                             </div>
 
@@ -32,7 +32,7 @@ export default function Contact() {
                                 </div>
                                 <div className="ml-4">
                                     <h4 className="font-semibold">{t('info.phone')}</h4>
-                                    <p className="text-muted-foreground">(11) 99999-9999</p>
+                                    <p className="text-muted-foreground">+55 (61) 99967-1694</p>
                                 </div>
                             </div>
                         </div>
