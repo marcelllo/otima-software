@@ -50,9 +50,9 @@
                 "title": "Business Intelligence",
                 "desc": "Dashboards interativos e relatórios automatizados para tomada de decisão baseada em dados."
             },
-            "security": {
-                "title": "Cibersegurança",
-                "desc": "Proteção avançada para seus sistemas e dados contra ameaças digitais em constante evolução."
+            "architecture": {
+                "title": "Consultoria em Arquitetura de Software",
+                "desc": "Orientação especializada no desenho de sistemas de software escaláveis, manuteníveis e de alta performance."
             }
         }
     },

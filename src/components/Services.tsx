@@ -1,4 +1,4 @@
-import { Layout, Smartphone, Cloud, Database, BarChart, ShieldCheck } from 'lucide-react';
+import { Layout, Smartphone, Cloud, Database, BarChart, Workflow } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 const servicesList = [
@@ -7,7 +7,7 @@ const servicesList = [
     { id: 'cloud', icon: Cloud },
     { id: 'data', icon: Database },
     { id: 'bi', icon: BarChart },
-    { id: 'security', icon: ShieldCheck },
+    { id: 'architecture', icon: Workflow },
 ];
 
 export default function Services() {

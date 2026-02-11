@@ -50,9 +50,9 @@
                 "title": "Business Intelligence",
                 "desc": "Interactive dashboards and automated reports for data-driven decision making."
             },
-            "security": {
-                "title": "Cybersecurity",
-                "desc": "Advanced protection for your systems and data against constantly evolving digital threats."
+            "architecture": {
+                "title": "Software Architecture Consulting",
+                "desc": "Expert guidance on designing scalable, maintainable, and high-performance software systems."
             }
         }
     },
