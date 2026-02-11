@@ -1,7 +1,46 @@
+"use client";
+
 import { useTranslations } from 'next-intl';
+import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
     const t = useTranslations('Contact');
+
+    const form = useRef<HTMLFormElement>(null);
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+    const sendEmail = (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus('idle');
+
+        if (!form.current) return;
+
+        emailjs
+            .sendForm(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                form.current,
+                {
+                    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+                }
+            )
+            .then(
+                () => {
+                    setStatus('success');
+                    form.current?.reset();
+                },
+                (error) => {
+                    console.error('FAILED...', error);
+                    setStatus('error');
+                },
+            )
+            .finally(() => {
+                setLoading(false);
+            });
+    };
 
     return (
         <section id="contact" className="section-padding bg-background relative overflow-hidden">
@@ -40,46 +79,36 @@ export default function Contact() {
 
                     <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
                         <h3 className="text-xl font-bold mb-6">{t('form.title')}</h3>
-                        <form className="space-y-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <label htmlFor="name" className="text-sm font-medium">{t('form.name')}</label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                                        placeholder={t('form.name_ph')}
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-medium">{t('form.email')}</label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                                        placeholder={t('form.email_ph')}
-                                    />
-                                </div>
-                            </div>
-
+                        <form ref={form} onSubmit={sendEmail} className="space-y-4">
                             <div className="space-y-2">
-                                <label htmlFor="subject" className="text-sm font-medium">{t('form.subject')}</label>
-                                <select
-                                    id="subject"
+                                <label htmlFor="name" className="text-sm font-medium">{t('form.name')}</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    required
                                     className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                                >
-                                    <option value="">{t('form.subject_ph')}</option>
-                                    <option value="orcamento">{t('form.subjects.budget')}</option>
-                                    <option value="parceria">{t('form.subjects.partnership')}</option>
-                                    <option value="duvidas">{t('form.subjects.general')}</option>
-                                    <option value="outro">{t('form.subjects.other')}</option>
-                                </select>
+                                    placeholder={t('form.name_ph')}
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label htmlFor="email" className="text-sm font-medium">{t('form.email')}</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    required
+                                    className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                                    placeholder={t('form.email_ph')}
+                                />
                             </div>
 
                             <div className="space-y-2">
                                 <label htmlFor="message" className="text-sm font-medium">{t('form.message')}</label>
                                 <textarea
+                                    name="message"
                                     id="message"
+                                    required
                                     rows={4}
                                     className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none"
                                     placeholder={t('form.message_ph')}
@@ -88,10 +117,13 @@ export default function Contact() {
 
                             <button
                                 type="submit"
-                                className="w-full inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                                disabled={loading}
+                                className="w-full inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                {t('form.submit')}
+                                {loading ? 'Sending...' : t('form.submit')}
                             </button>
+                            {status === 'success' && <p className="text-green-500 text-sm text-center">Message sent successfully!</p>}
+                            {status === 'error' && <p className="text-red-500 text-sm text-center">Failed to send message. Please try again.</p>}
                         </form>
                     </div>
                 </div>
