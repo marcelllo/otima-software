@@ -92,7 +92,10 @@
             },
             "message": "Mensagem",
             "message_ph": "Como podemos ajudar?",
-            "submit": "Enviar Mensagem"
+            "submit": "Enviar Mensagem",
+            "submitting": "Enviando...",
+            "success": "Mensagem enviada com sucesso!",
+            "error": "Falha ao enviar mensagem. Tente novamente."
         }
     },
     "Footer": {

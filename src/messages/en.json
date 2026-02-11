@@ -92,7 +92,10 @@
             },
             "message": "Message",
             "message_ph": "How can we help?",
-            "submit": "Send Message"
+            "submit": "Send Message",
+            "submitting": "Sending...",
+            "success": "Message sent successfully!",
+            "error": "Failed to send message. Please try again."
         }
     },
     "Footer": {

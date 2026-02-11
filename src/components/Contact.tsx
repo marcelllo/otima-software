@@ -140,10 +140,10 @@ export default function Contact() {
                                 disabled={loading || !captchaToken}
                                 className="w-full inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                {loading ? 'Sending...' : t('form.submit')}
+                                {loading ? t('form.submitting') : t('form.submit')}
                             </button>
-                            {status === 'success' && <p className="text-green-500 text-sm text-center">Message sent successfully!</p>}
-                            {status === 'error' && <p className="text-red-500 text-sm text-center">Failed to send message. Please try again.</p>}
+                            {status === 'success' && <p className="text-green-500 text-sm text-center">{t('form.success')}</p>}
+                            {status === 'error' && <p className="text-red-500 text-sm text-center">{t('form.error')}</p>}
                         </form>
                     </div>
                 </div>
