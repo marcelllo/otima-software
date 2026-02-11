@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function Contact() {
     const t = useTranslations('Contact');
@@ -10,9 +11,17 @@ export default function Contact() {
     const form = useRef<HTMLFormElement>(null);
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const sendEmail = (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!captchaToken) {
+            alert("Please complete the captcha.");
+            return;
+        }
+
         setLoading(true);
         setStatus('idle');
 
@@ -31,6 +40,8 @@ export default function Contact() {
                 () => {
                     setStatus('success');
                     form.current?.reset();
+                    recaptchaRef.current?.reset();
+                    setCaptchaToken(null);
                 },
                 (error) => {
                     console.error('FAILED...', error);
@@ -115,9 +126,18 @@ export default function Contact() {
                                 />
                             </div>
 
+                            <div className="flex justify-center">
+                                <ReCAPTCHA
+                                    ref={recaptchaRef}
+                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                                    onChange={(token) => setCaptchaToken(token)}
+                                    theme="light"
+                                />
+                            </div>
+
                             <button
                                 type="submit"
-                                disabled={loading}
+                                disabled={loading || !captchaToken}
                                 className="w-full inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {loading ? 'Sending...' : t('form.submit')}
