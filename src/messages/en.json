@@ -1,0 +1,113 @@
+{
+    "Navbar": {
+        "services": "Services",
+        "about": "About",
+        "contact": "Contact",
+        "cta": "Get in Touch"
+    },
+    "Hero": {
+        "badge": "Digital Transformation for Your Business",
+        "title": "We Build Software that Powers the Future.",
+        "subtitle": "From conception to launch, Otima develops high-performance digital solutions that scale with your success. Web, Mobile, and Cloud.",
+        "cta_primary": "Start Project",
+        "cta_secondary": "Our Services",
+        "features": {
+            "web": {
+                "title": "Modern Web",
+                "desc": "Fast and responsive applications built with the latest technologies."
+            },
+            "custom": {
+                "title": "Custom Software",
+                "desc": "Tailored solutions designed specifically for your challenges."
+            },
+            "ai": {
+                "title": "AI & Automation",
+                "desc": "Integration of artificial intelligence to optimize your processes."
+            }
+        }
+    },
+    "Services": {
+        "title": "Our Expertise",
+        "subtitle": "We combine technical expertise with business vision to deliver complete solutions.",
+        "items": {
+            "web": {
+                "title": "Web Development",
+                "desc": "Robust, fast, and SEO-optimized web applications that convert visitors into customers."
+            },
+            "mobile": {
+                "title": "Mobile Apps",
+                "desc": "Native and hybrid apps for iOS and Android with exceptional user experience."
+            },
+            "cloud": {
+                "title": "Cloud Solutions",
+                "desc": "Scalable and secure architecture on AWS, Azure, or Google Cloud to support your business growth."
+            },
+            "data": {
+                "title": "Data Engineering",
+                "desc": "Transform raw data into actionable insights with our analysis and processing solutions."
+            },
+            "bi": {
+                "title": "Business Intelligence",
+                "desc": "Interactive dashboards and automated reports for data-driven decision making."
+            },
+            "security": {
+                "title": "Cybersecurity",
+                "desc": "Advanced protection for your systems and data against constantly evolving digital threats."
+            }
+        }
+    },
+    "About": {
+        "title": "About Otima",
+        "p1": "We are a software development consultancy passionate about technology and focused on results. Since 2024, we help companies innovate through robust digital solutions.",
+        "p2": "We believe code is just the means. The end is generating real value for your business, whether by automating processes, improving your customer experience, or creating new revenue channels.",
+        "checks": {
+            "team": "Senior Team",
+            "agile": "Agile Methodology",
+            "code": "Clean Code",
+            "delivery": "Continuous Delivery",
+            "ux": "UX Focus",
+            "support": "Dedicated Support"
+        }
+    },
+    "Contact": {
+        "title": "Ready to digitize your business?",
+        "subtitle": "Let's talk about your project. Our team is ready to understand your challenges and propose the best technical solution.",
+        "info": {
+            "email": "Email",
+            "phone": "Phone"
+        },
+        "form": {
+            "title": "Send a message",
+            "name": "Name",
+            "name_ph": "Your name",
+            "email": "Email",
+            "email_ph": "your@email.com",
+            "subject": "Subject",
+            "subject_ph": "Select a subject",
+            "subjects": {
+                "budget": "Project Budget",
+                "partnership": "Partnership",
+                "general": "General Questions",
+                "other": "Other"
+            },
+            "message": "Message",
+            "message_ph": "How can we help?",
+            "submit": "Send Message"
+        }
+    },
+    "Footer": {
+        "tagline": "Transforming ideas into high-performance software. We develop the future of your business.",
+        "company": "Company",
+        "legal": "Legal",
+        "social": "Social",
+        "links": {
+            "about": "About Us",
+            "services": "Services",
+            "careers": "Careers",
+            "blog": "Blog",
+            "privacy": "Privacy",
+            "terms": "Terms of Use"
+        },
+        "copyright": "© {year} Otima Software. All rights reserved."
+    }
+}

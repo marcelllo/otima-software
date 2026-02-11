@@ -1,0 +1,113 @@
+{
+    "Navbar": {
+        "services": "Serviços",
+        "about": "Sobre",
+        "contact": "Contato",
+        "cta": "Fale Conosco"
+    },
+    "Hero": {
+        "badge": "Transformação Digital para o seu Negócio",
+        "title": "Construímos o Software que Impulsiona o Futuro.",
+        "subtitle": "Da concepção ao lançamento, a Otima desenvolve soluções digitais de alta performance que escalam com o seu sucesso. Web, Mobile e Cloud.",
+        "cta_primary": "Começar Projeto",
+        "cta_secondary": "Nossos Serviços",
+        "features": {
+            "web": {
+                "title": "Web Moderna",
+                "desc": "Aplicações rápidas e responsivas construídas com as tecnologias mais recentes."
+            },
+            "custom": {
+                "title": "Software Sob Medida",
+                "desc": "Soluções personalizadas desenhadas especificamente para os seus desafios."
+            },
+            "ai": {
+                "title": "IA & Automação",
+                "desc": "Integração de inteligência artificial para otimizar seus processos."
+            }
+        }
+    },
+    "Services": {
+        "title": "Nossas Especialidades",
+        "subtitle": "Combinamos expertise técnica com visão de negócio para entregar soluções completas.",
+        "items": {
+            "web": {
+                "title": "Desenvolvimento Web",
+                "desc": "Sites e aplicações web robustas, rápidas e otimizadas para SEO que convertem visitantes em clientes."
+            },
+            "mobile": {
+                "title": "Apps Mobile",
+                "desc": "Aplicativos nativos e híbridos para iOS e Android com experiência de usuário excepcional."
+            },
+            "cloud": {
+                "title": "Soluções em Nuvem",
+                "desc": "Arquitetura escalável e segura na AWS, Azure ou Google Cloud para suportar o crescimento do seu negócio."
+            },
+            "data": {
+                "title": "Engenharia de Dados",
+                "desc": "Transforme dados brutos em insights acionáveis com nossas soluções de análise e processamento."
+            },
+            "bi": {
+                "title": "Business Intelligence",
+                "desc": "Dashboards interativos e relatórios automatizados para tomada de decisão baseada em dados."
+            },
+            "security": {
+                "title": "Cibersegurança",
+                "desc": "Proteção avançada para seus sistemas e dados contra ameaças digitais em constante evolução."
+            }
+        }
+    },
+    "About": {
+        "title": "Sobre a Otima",
+        "p1": "Somos uma consultoria de desenvolvimento de software apaixonada por tecnologia e focada em resultados. Desde 2024, ajudamos empresas a inovarem através de soluções digitais robustas.",
+        "p2": "Acreditamos que o código é apenas o meio. O fim é gerar valor real para o seu negócio, seja automatizando processos, melhorando a experiência do seus clientes ou criando novos canais de receita.",
+        "checks": {
+            "team": "Equipe Senior",
+            "agile": "Metodologia Ágil",
+            "code": "Código Limpo",
+            "delivery": "Entrega Contínua",
+            "ux": "Foco em UX",
+            "support": "Suporte Dedicado"
+        }
+    },
+    "Contact": {
+        "title": "Pronto para digitalizar o seu negócio?",
+        "subtitle": "Vamos conversar sobre o seu projeto. Nossa equipe está pronta para entender seus desafios e propor a melhor solução técnica.",
+        "info": {
+            "email": "Email",
+            "phone": "Telefone"
+        },
+        "form": {
+            "title": "Envie uma mensagem",
+            "name": "Nome",
+            "name_ph": "Seu nome",
+            "email": "Email",
+            "email_ph": "seu@email.com",
+            "subject": "Assunto",
+            "subject_ph": "Selecione um assunto",
+            "subjects": {
+                "budget": "Orçamento de Projeto",
+                "partnership": "Parceria",
+                "general": "Dúvidas Gerais",
+                "other": "Outro"
+            },
+            "message": "Mensagem",
+            "message_ph": "Como podemos ajudar?",
+            "submit": "Enviar Mensagem"
+        }
+    },
+    "Footer": {
+        "tagline": "Transformando ideias em software de alta performance. Desenvolvemos o futuro do seu negócio.",
+        "company": "Empresa",
+        "legal": "Legal",
+        "social": "Social",
+        "links": {
+            "about": "Sobre Nós",
+            "services": "Serviços",
+            "careers": "Carreiras",
+            "blog": "Blog",
+            "privacy": "Privacidade",
+            "terms": "Termos de Uso"
+        },
+        "copyright": "© {year} Otima Software. Todos os direitos reservados."
+    }
+}

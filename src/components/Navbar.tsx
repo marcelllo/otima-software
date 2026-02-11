@@ -1,11 +1,14 @@
 "use client";
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { Menu, X, Code2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations('Navbar');
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -17,63 +20,67 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
-          <Link href="#services" className="transition-colors hover:text-primary">
-            Serviços
+          <Link href="/#services" className="transition-colors hover:text-primary">
+            {t('services')}
           </Link>
-          <Link href="#about" className="transition-colors hover:text-primary">
-            Sobre
+          <Link href="/#about" className="transition-colors hover:text-primary">
+            {t('about')}
           </Link>
-          <Link href="#contact" className="transition-colors hover:text-primary">
-            Contato
+          <Link href="/#contact" className="transition-colors hover:text-primary">
+            {t('contact')}
           </Link>
-          <Link 
-            href="#contact" 
+          <LanguageSwitcher />
+          <Link
+            href="/#contact"
             className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
-            Fale Conosco
+            {t('cta')}
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 text-foreground"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="md:hidden flex items-center space-x-4">
+          <LanguageSwitcher />
+          <button
+            className="p-2 text-foreground"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden border-t border-border">
           <div className="container-custom py-4 flex flex-col space-y-4">
-            <Link 
-              href="#services" 
+            <Link
+              href="/#services"
               className="text-sm font-medium transition-colors hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
-              Serviços
+              {t('services')}
             </Link>
-            <Link 
-              href="#about" 
+            <Link
+              href="/#about"
               className="text-sm font-medium transition-colors hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
-              Sobre
+              {t('about')}
             </Link>
-            <Link 
-              href="#contact" 
+            <Link
+              href="/#contact"
               className="text-sm font-medium transition-colors hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
-              Contato
+              {t('contact')}
             </Link>
-            <Link 
-              href="#contact"
+            <Link
+              href="/#contact"
               className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
               onClick={() => setIsOpen(false)}
             >
-              Fale Conosco
+              {t('cta')}
             </Link>
           </div>
         </div>
